@@ -30,11 +30,9 @@ public class Ngay {
     {
         Ngay time = new Ngay();
         Scanner sc = new Scanner(System.in);
-        System.out.print("\nNgày ");
+        System.out.print("\nNgày/Tháng/Năm: ");
         time.ngay=sc.nextInt();
-        System.out.println("Tháng ");
         time.thang=sc.nextInt();
-        System.out.println("Năm ");
         time.nam=sc.nextInt();
         return time;
     }

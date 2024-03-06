@@ -30,6 +30,7 @@ public class ThoiGianHoc {
     }
     public void Nhap()
     {
+        System.out.println("Nhập thời gian học:");
         System.out.println("Tiết 1:7h30-8h15"+",2:8h15-9h,3:9h-9h45,4:10h-10h45,5:10h45-11h30");
         System.out.println("Tiết 6:13h-13h45"+",2:13h45-14h30,3:14h30-15h15,4:15h30-16h15,5:16h15-17h");
         Scanner sc = new Scanner(System.in);
@@ -38,6 +39,6 @@ public class ThoiGianHoc {
         System.out.println("Tiết kết thúc:");
         this.tietKetThuc=sc.nextInt();
         System.out.println("Thứ(Mo-Tu-Wed-Thu-Fri-Sa-Sun)");
-        this.thu=sc.nextLine();
+        this.thu= new Scanner(System.in).nextLine();
     }
 }

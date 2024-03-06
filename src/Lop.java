@@ -5,11 +5,16 @@ public class Lop {
     private String maLop;
     private String tenMon;
     private int soTinChi;
-    private ThoiGianHoc thoiGianHoc;
+    private ThoiGianHoc thoiGianHoc = new ThoiGianHoc();
 
     private Ngay ngayBatDau;
     private Ngay ngayKetThuc;
 
+    public int soLuongDK = 0 ;
+    public void ghiNhanDangKy()
+    {
+        soLuongDK++;
+    }
     public String getMaLop() {
         return maLop;
     }
@@ -35,45 +40,66 @@ public class Lop {
     }
 
     public ThoiGianHoc getThoiGianHoc() {
+
         return thoiGianHoc;
     }
 
     public void setThoiGianHoc(ThoiGianHoc thoiGianHoc) {
+
         this.thoiGianHoc = thoiGianHoc;
     }
 
     public Ngay getNgayBatDau() {
+
         return ngayBatDau;
     }
 
-    public void setNgayBatDau(Ngay ngayBatDau) {
+    public void setNgayBatDau(Ngay ngayBatDau)
+    {
         this.ngayBatDau = ngayBatDau;
     }
 
-    public Ngay getNgayKetThuc() {
+    public Ngay getNgayKetThuc()
+    {
         return ngayKetThuc;
     }
 
-    public void setNgayKetThuc(Ngay ngayKetThuc) {
+    public void setNgayKetThuc(Ngay ngayKetThuc)
+    {
         this.ngayKetThuc = ngayKetThuc;
     }
 
    public int NhapTinChi()
    {
+       System.out.print("Số tín chỉ của môn: ");
        this.soTinChi = new Scanner(System.in).nextInt();
        return this.soTinChi;
    }
     public void NhapThongTin()
     {
         Scanner sc = new Scanner(System.in);
-        System.out.print("\nNhập mã lớp:");
+        System.out.print("Nhập mã lớp:");
         this.maLop= sc.nextLine();
-        System.out.print("\nNhập tên môn:");
+        System.out.print("Nhập tên môn:");
         this.tenMon=sc.nextLine();
-        System.out.print("\nNgày bắt đầu:");
+        NhapTinChi();
+        System.out.print("Ngày bắt đầu:");
         this.ngayBatDau= new Ngay().Nhap();
-        System.out.print("\nNgày kết thúc:");
+        System.out.print("Ngày kết thúc:");
         this.ngayKetThuc = new Ngay().Nhap();
-        System.out.println("");
+        this.thoiGianHoc.Nhap();
+    }
+    public void xuatCoBan()
+    {
+        System.out.print("Mã lớp: "+this.maLop);
+        System.out.print(", Tên lớp: "+ this.tenMon);
+    }
+    public boolean timKiemLop(String _maLop)
+    {
+        return this.maLop.equals(_maLop);
+    }
+    public boolean kiemTraHocMon(String _mamon)
+    {
+        return _mamon==this.maLop;
     }
 }
